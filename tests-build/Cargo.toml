@@ -10,7 +10,7 @@ full = ["tokio/full"]
 rt = ["tokio/rt", "tokio/macros"]
 
 [dependencies]
-tokio = { path = "../tokio", optional = true }
+tokio = { path = "../tokio", optional = true, package = "real_tokio" }
 
 [dev-dependencies]
 trybuild = "1.0"

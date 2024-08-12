@@ -39,6 +39,7 @@ rt-process-signal = ["rt-net", "tokio/process", "tokio/signal"]
 # This is an explicit feature so we can use `cargo hack` testing single features
 # instead of all possible permutations.
 wasi-rt = ["rt", "macros", "sync"]
+wasi-threads-rt = ["wasi-rt", "rt-multi-thread"]
 
 full = [
     "macros",
@@ -54,7 +55,7 @@ rt = ["tokio/rt"]
 rt-multi-thread = ["rt", "tokio/rt-multi-thread"]
 
 [dependencies]
-tokio = { path = "../tokio" }
+tokio = { path = "../tokio", package = "real_tokio" }
 tokio-test = { path = "../tokio-test", optional = true }
 doc-comment = "0.3.1"
 futures = { version = "0.3.0", features = ["async-await"] }
